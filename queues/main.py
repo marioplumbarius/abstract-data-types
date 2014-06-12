@@ -1,7 +1,7 @@
 """
   Let's take a look at two ADTs:
-  - Queue
-  - Priority Queue
+  - Queue ADT (FIFO)
+  - Priority Queue ADT (priority)
 
   Real life examples:
   - in most cases, the first customer in line is the next customer to be served
