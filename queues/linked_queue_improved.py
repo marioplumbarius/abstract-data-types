@@ -1,3 +1,6 @@
+from queue_adt import QueueADT
+from node import Node
+
 class LinkedQueueImproved(QueueADT):
   def __init__(self):
     self.length = 0
@@ -12,7 +15,7 @@ class LinkedQueueImproved(QueueADT):
     node = Node(cargo)
     node.next = None
 
-    if self.length == 0
+    if self.length == 0:
       self.head = self.last = node
     else:
       last = self.last

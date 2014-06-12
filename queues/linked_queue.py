@@ -10,19 +10,6 @@ class LinkedQueue(QueueADT):
     self.length = 0
     self.head = None
 
-  def printQueue(self):
-      if self.isEmpty():
-        print []
-        return
-
-      node = self.head
-      print '[',
-      while node != None:
-        print node.cargo,
-        node = node.next
-        if node and node.next: print ',',
-      print ']'
-
   """ identical to LinkedList's one """
   def isEmpty(self):
     return (self.length == 0)
@@ -48,11 +35,3 @@ class LinkedQueue(QueueADT):
     self.head = self.head.next
     self.length = self.length - 1
     return cargo
-
-a = LinkedQueue()
-a.printQueue()
-a.insert(1)
-a.printQueue()
-a.insert(2)
-a.printQueue()
-a.printQueue()
