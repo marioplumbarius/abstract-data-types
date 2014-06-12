@@ -8,3 +8,8 @@ class Node():
 
   def __str__(self):
     return str(self.cargo)
+
+  def __cmp__(self, other):
+    if self.cargo > other.cargo: return 1
+    elif self.cargo < other.cargo: return -1
+    return 0
