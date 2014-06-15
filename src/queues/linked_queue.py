@@ -1,5 +1,5 @@
 from queue_adt import QueueADT
-from node import Node
+from src.linked_lists.node import Node
 
 class LinkedQueue(QueueADT):
   """ 
