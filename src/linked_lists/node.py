@@ -10,6 +10,7 @@ class Node():
     return str(self.cargo)
 
   def __cmp__(self, other):
+    if not isinstance(other, Node): return 0
     if self.cargo > other.cargo: return 1
     elif self.cargo < other.cargo: return -1
     return 0
