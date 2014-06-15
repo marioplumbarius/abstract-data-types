@@ -5,7 +5,7 @@ from stack_interface import StackInterface
 
 class Stack(StackInterface):
   """
-    - ageneric data structure:
+    - a generic data structure:
         we can add any type of item to it
     - a veneer:
         in which the methods consist of simple invocations of existing methods
