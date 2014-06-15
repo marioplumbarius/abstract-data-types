@@ -13,11 +13,10 @@ with describe(Stack) as it:
     # is it necessary?
     test.stack = None
 
-
-  with context(Stack.__init__):
-    with it('inherits from StackInterface') as test:
+  with it('inherits from StackInterface') as test:
       expect(test.stack).to.be.a(StackInterface)
 
+  with context(Stack.__init__):
     with it('create an empty stack') as test:
       expect(test.stack.items).to.be.empty
 
