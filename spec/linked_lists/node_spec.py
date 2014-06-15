@@ -34,3 +34,6 @@ with describe(Node) as it:
 
     with it('returns False when equal') as test:
       expect(test.node > Node(2)).to.be(False)
+
+    with it('returns False when being compared to an object other than a Node') as test:
+      expect(test.node == None).to.be(False)
