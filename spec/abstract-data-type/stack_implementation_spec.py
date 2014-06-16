@@ -26,7 +26,7 @@ with describe(Stack) as it:
       test.stack.push(item)
       last_item = test.stack.items[-1]
       
-      expect(last_item).to.equal(item)
+      expect(last_item).to.be(item)
 
   with context(Stack.pop):
     with it('remove and return the last added item from the stack') as test:
@@ -34,8 +34,8 @@ with describe(Stack) as it:
       test.stack.push(item)
       last_item = test.stack.pop()
       
-      expect(last_item).to.equal(item)
+      expect(last_item).to.be(item)
 
   with context(Stack.isEmpty):
     with it('return true if the stack is empty') as test:
-      expect(test.stack.isEmpty()).to.be(True)
+      expect(test.stack.isEmpty()).to.be.true

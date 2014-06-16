@@ -27,13 +27,13 @@ with describe(Node) as it:
       expect(test.node).to.be.above(Node(1))
 
     with it('returns True when greater') as test:
-      expect(test.node > Node(0)).to.be(True)
+      expect(test.node > Node(0)).to.be.true
 
     with it('returns False when lesser') as test:
-      expect(test.node > Node(3)).to.be(False)
+      expect(test.node > Node(3)).to.be.false
 
     with it('returns False when equal') as test:
-      expect(test.node > Node(2)).to.be(False)
+      expect(test.node > Node(2)).to.be.false
 
     with it('returns False when being compared to an object other than a Node') as test:
-      expect(test.node == None).to.be(False)
+      expect(test.node == None).to.be.false

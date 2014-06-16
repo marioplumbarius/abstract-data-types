@@ -17,16 +17,17 @@ with describe(LinkedList) as it:
       expect(test.list.length).to.be(0)
 
     with it('set its head to None') as test:
-      expect(test.list.head).to.be(None)
+      expect(test.list.head).to.be.none
 
   with context(LinkedList.isEmpty):
     with it('return true if the list is empty') as test:
-      expect(test.list.isEmpty()).to.be(True)
+      expect(test.list.isEmpty()).to.be.true
 
   with context(LinkedList.addNode):
+    # fixme!!!
     with it('does not add a new item when it is None') as test:
       test.list.addNode(None)
-      expect(test.list.head).to.be(None)
+      expect(test.list.head).to.be.none
 
     with it('create a Node object and add it to the list') as test:
       test.list.addNode(33)
@@ -38,7 +39,7 @@ with describe(LinkedList) as it:
 
     with it('the first item added does not link to any item') as test:
       test.list.addNode(33)
-      expect(test.list.head.next).to.be(None)
+      expect(test.list.head.next).to.be.none
 
     with it('add a item at the top/head of the list') as test:
       test.list.addNode(44)
