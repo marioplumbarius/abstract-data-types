@@ -21,9 +21,15 @@ class PQLinkedList(PriorityQueueADT):
       else:
         tail = self.head
         last = tail
-        while tail and tail > node:
-          last = tail
-          tail = tail.next
+        while tail:
+          if tail > node:
+            last = tail
+            tail = tail.next
+            
+            if tail < node: break
+          else:
+            return
+
         node.next = tail
         last.next = node
 
