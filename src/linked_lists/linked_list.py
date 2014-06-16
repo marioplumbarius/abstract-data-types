@@ -10,27 +10,32 @@ class LinkedList():
     self.length = 0
     self.head = None
 
+  # TODO: spec me
   def printList(self, sorting_order=1):
     print '[',
 
     if sorting_order > 0:
-      self.printReverse()
+      self.printBackward(self.head)
     else:
-      self.printNormal(self.head)
+      self.printFoward(self.head)
 
     print ']',
 
-  def printReverse(self):
-    node = self.head
-    while node:
-      print node
+  # TODO: spec me
+  def printFoward(self, node):
+    if node != None:
+      print node,
       node = node.next
+      if node: print ',',
+      self.printFoward(node)
 
-  def printNormal(self, list):
-    if list.next != None:
-      tail = list.next
+  # TODO: spec me
+  def printBackward(self, node):
+    if node.next != None:
+      tail = node.next
       self.printBackward(tail)
-    print list.cargo, ',',
+      print ',',
+    print node.cargo,
 
   def addNode(self, cargo):
     if cargo == None: return

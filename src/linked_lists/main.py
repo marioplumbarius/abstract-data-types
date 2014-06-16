@@ -34,7 +34,7 @@ def printList(node):
     if node: print ',', 
   print ']'
 
-printList(n1)
+# printList(n1)
 
 def printListBackward(node):
   # recursive
@@ -44,7 +44,7 @@ def printListBackward(node):
   printListBackward(tail)
   print head,
 
-printListBackward(n1)
+# printListBackward(n1)
 print
 
 # MODIFYING LISTS
@@ -59,7 +59,8 @@ def removeSecond(list):
   second.next = None
   return second
 
-# usages
+# examples
+"""
 print 'removing second node from a list with 3 nodes'
 printList(n1)
 removed = removeSecond(n1)
@@ -74,3 +75,18 @@ print 'removing second node from a empty list'
 printList(removed)
 removed = removeSecond(removed)
 print 'removed node', printList(removed)
+"""
+
+# LINKED_LISTS
+from linked_list import LinkedList
+
+l = LinkedList()
+l.addNode(9)
+l.addNode(15)
+l.addNode(13)
+l.addNode(1)
+print 'printing in the order the items were added'
+l.printList(-1)
+print
+print 'printing in reverse order'
+l.printList(1)
