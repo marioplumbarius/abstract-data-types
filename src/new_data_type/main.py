@@ -1,13 +1,21 @@
 from fraction import Fraction
 
-print Fraction(5, 6) + Fraction(2, 3)
-print Fraction(5, 6) + 10
-print 20 + Fraction(2, 3)
+""" adding """
+print Fraction(2,3) + Fraction(3,2) # 13/6
+print Fraction(2,3) + 3 # 11/3
+print 3 + Fraction(2,3) # 11/3
 
-print Fraction(5, 6) * Fraction(2, 3)
-print Fraction(5, 6) * 10
-print 20 * Fraction(2, 3)
+""" multiplication """
+print Fraction(2,3) * Fraction(3,2) # 1/1
+print Fraction(2,3) * 3 # 2/1
+print 3 * Fraction(2,3) # 2/1
 
-print Fraction(100,-36)
+""" subtraction """
+print Fraction(2,3) - Fraction(3,2) # -5/6
+print Fraction(2,3) - 3 # -7/3
+print 3 - Fraction(2,3) # 7/3
 
-print Fraction(20) == Fraction(20)
+""" division """
+print Fraction(2,3) / Fraction(3,2) # 4/9
+print Fraction(2,3) / 3 # 2/9
+print 3 / Fraction(2,3) # 9/2
