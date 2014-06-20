@@ -1,2 +1,0 @@
-alias ivoire="ivoire -v"
-export PYTHONPATH=/vagrant
