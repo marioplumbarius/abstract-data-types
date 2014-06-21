@@ -1,4 +1,4 @@
-from src.linked_lists.node import Node
+from src.list.node import Node
 from priority_queue_adt import PriorityQueueADT
 
 class PriorityQueue(PriorityQueueADT):

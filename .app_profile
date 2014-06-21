@@ -1,0 +1,2 @@
+alias ivoire="ivoire -v"
+export PYTHONPATH=/opt/adt

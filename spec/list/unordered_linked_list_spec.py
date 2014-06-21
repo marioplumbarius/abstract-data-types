@@ -1,29 +1,25 @@
 from ivoire import describe, context
 from expects import expect
-from src.linked_lists.linked_list import LinkedList
-from src.linked_lists.node import Node
+from src.list.unordered_linked_list import UnorderedLinkedList
+from src.list.node import Node
 
-with describe(LinkedList) as it:
+with describe(UnorderedLinkedList) as it:
   @it.before
   def before(test):
-    test.list = LinkedList()
+    test.list = UnorderedLinkedList()
 
-  @it.after
-  def after(test):
-    test.list = None
-
-  with context(LinkedList.__init__):
+  with context(UnorderedLinkedList.__init__):
     with it('set its length to zero') as test:
       expect(test.list.length).to.be(0)
 
     with it('set its head to None') as test:
       expect(test.list.head).to.be.none
 
-  with context(LinkedList.isEmpty):
+  with context(UnorderedLinkedList.isEmpty):
     with it('return true if the list is empty') as test:
       expect(test.list.isEmpty()).to.be.true
 
-  with context(LinkedList.addNode):
+  with context(UnorderedLinkedList.addNode):
     # fixme!!!
     with it('does not add a new item when it is None') as test:
       test.list.addNode(None)

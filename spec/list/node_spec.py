@@ -1,16 +1,12 @@
 from ivoire import describe, context
 from expects import expect
-from src.linked_lists.node import Node
+from src.list.node import Node
 
 with describe(Node) as it:
   @it.before
   def before(test):
     nextNode = Node(1)
     test.node = Node(2, nextNode)
-
-  @it.after
-  def after(test):
-    test.node = None
 
   with context(Node.__init__):
     with it('assign a cargo value') as test:

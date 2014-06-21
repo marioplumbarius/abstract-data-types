@@ -1,5 +1,5 @@
 from queue_adt import QueueADT
-from src.linked_lists.node import Node
+from src.list.node import Node
 
 class QueueList(QueueADT):
   def __init__(self):

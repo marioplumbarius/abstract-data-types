@@ -1,6 +1,7 @@
 from node import Node
+from list_interface import ListInterface
 
-class LinkedList():
+class UnorderedLinkedList(ListInterface):
 
   """
   A data structure that implements a collection using a sequence of linked nodes.
