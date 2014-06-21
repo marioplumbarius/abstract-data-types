@@ -1,53 +1,46 @@
 from ivoire import describe, context
 from expects import expect
-from src.queues.linked_queue import LinkedQueue
+from src.queues.linked_queue_improved import LinkedQueueImproved
+from src.queues.queue_adt import QueueADT
 
-with describe(LinkedQueue) as it:
+with describe(LinkedQueueImproved) as it:
   @it.before
   def before(test):
-    test.queue = LinkedQueue()
+    test.queue = LinkedQueueImproved()
 
-  @it.after
-  def after(test):
-    test.queue = None
+  with it('inherits from QueueADT') as test:
+    expect(test.queue).to.be.a(QueueADT)
 
-  with context(LinkedQueue.__init__):
+  with context(LinkedQueueImproved.__init__):
     with it('creates an empty queue') as test:
       expect(test.queue).to.have.property('length', 0)
       expect(test.queue).to.have.property('head', None)
+      expect(test.queue).to.have.property('tail', None)
 
-  with context(LinkedQueue.isEmpty):
-    with it('return true if the queue is empty') as test:
+  with context(LinkedQueueImproved.isEmpty):
+    with it('returns True when queue is empty') as test:
       expect(test.queue.isEmpty()).to.be.true
 
-    with it('returns false if the queue is not empty') as test:
-      test.queue.insert(7)
+    with it('returns False when queue is not empty') as test:
+      test.queue.insert(88)
       expect(test.queue.isEmpty()).to.be.false
 
-  with context(LinkedQueue.insert):
-    with it('add node at the end of the queue') as test:
-      test.queue.insert(1)
-      test.queue.insert(2)
-      test.queue.insert(7)
-      expected_cargo = 7
-      last_node = test.queue.head
+  with context(LinkedQueueImproved.insert):
+    with it('adds a new node to the end/tail of the queue') as test:
+      test.queue.insert(11)
+      test.queue.insert(22)
+      expect(test.queue.tail.cargo).to.equal(22)
 
-      while last_node.next != None:
-        last_node = last_node.next
-
-      expect(last_node.cargo).to.equal(expected_cargo)
-
-    with it('add node at the top/head of the queue when it is empty') as test:
-      expected_cargo = 9
-      test.queue.insert(expected_cargo)
-
-      expect(test.queue.head.cargo).to.equal(expected_cargo)
-
-    with it('increments the length of the queue') as test:
-      test.queue.insert(1)
+    with it('increments the queue length') as test:
+      test.queue.insert(33)
       expect(test.queue).to.have.property('length', 1)
 
-  with context(LinkedQueue.remove):
+    with it('when the queue is empty, the new node is assigned both to the head and tail') as test:
+      test.queue.insert(55)
+      expect(test.queue.head.cargo).to.equal(55)
+      expect(test.queue.tail.cargo).to.equal(55)
+
+  with context(LinkedQueueImproved.remove):
     with it('removes and returns the top/head node from the queue') as test:
       test.queue.insert(33)
       test.queue.insert(22)

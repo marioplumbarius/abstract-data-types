@@ -1,8 +1,5 @@
 class PriorityQueueADT():
-  """
-    *priority policy
-    - each customer is assigned a priority and the customer with the highest priority goes first, regardless of the order of arrival
-  """
+  """ interface for a priority queue """
 
   def __init__(self):
     """ initialize a new empty queue """

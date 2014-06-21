@@ -2,21 +2,21 @@ from queue_adt import QueueADT
 from src.list.node import Node
 
 class QueueList(QueueADT):
+  """ implementation of a queue using a python list """
+
   def __init__(self):
-    self.length = 0
+    """ create an empty queue """
     self.list = []
 
   def isEmpty(self):
-    return (self.length == 0)
+    """ check if queue is empty """
+    return (self.list == [])
 
   def insert(self, cargo):
+    """ add a new node to the queue """
     node = Node(cargo)
-    node.next = None
-    
     self.list.append(node)
-    self.length = self.length + 1
 
   def remove(self):
-    if self.length == 0: return
-    self.length = self.length - 1
+    """ remove and return the node at the top of the queue """
     return self.list.pop(0)

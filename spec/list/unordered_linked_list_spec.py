@@ -9,18 +9,15 @@ with describe(UnorderedLinkedList) as it:
     test.list = UnorderedLinkedList()
 
   with context(UnorderedLinkedList.__init__):
-    with it('set its length to zero') as test:
+    with it('create an empty list') as test:
       expect(test.list.length).to.be(0)
-
-    with it('set its head to None') as test:
-      expect(test.list.head).to.be.none
+      expect(test.list.head).to.be.none      
 
   with context(UnorderedLinkedList.isEmpty):
     with it('return true if the list is empty') as test:
       expect(test.list.isEmpty()).to.be.true
 
   with context(UnorderedLinkedList.addNode):
-    # fixme!!!
     with it('does not add a new item when it is None') as test:
       test.list.addNode(None)
       expect(test.list.head).to.be.none

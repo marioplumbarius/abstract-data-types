@@ -2,21 +2,19 @@ from queue_adt import QueueADT
 from src.list.node import Node
 
 class LinkedQueue(QueueADT):
-  """ 
-    *FIFO policy
-  implementation of the Queue ADT, made up of linked Node objects
-  """
+  """ implementation of a queue using a linked list data structure """
+  
   def __init__(self):
+    """ create an empty queue """
     self.length = 0
     self.head = None
 
-  """ identical to LinkedList's one """
   def isEmpty(self):
+    """ check if the queue is empty """
     return (self.length == 0)
 
-  """ a bit more complicated than LinkedList's one """
   def insert(self, cargo):
-    # takes linear time
+    """ insert a new node at the end of the queue: O(n) """
     node = Node(cargo)
     node.next = None
 
@@ -28,9 +26,9 @@ class LinkedQueue(QueueADT):
       last.next = node
     self.length = self.length + 1
 
-  """ identical to LinkedList's one """
   def remove(self):
-    # takes constant time
+    """ remove and return the node at the top of the queue: O(1) """
+    if self.isEmpty(): return
     cargo = self.head.cargo
     self.head = self.head.next
     self.length = self.length - 1
