@@ -1,15 +1,15 @@
 from ivoire import describe, context
 from expects import expect
 from src.queues.queue_list import QueueList
-from src.queues.queue_adt import QueueADT
+from src.queues.queue_interface import QueueInterface
 
 with describe(QueueList) as it:
   @it.before
   def before(test):
     test.queue = QueueList()
 
-  with it('inherits from the QueueADT') as test:
-    expect(test.queue).to.be.a(QueueADT)
+  with it('inherits from the QueueInterface') as test:
+    expect(test.queue).to.be.a(QueueInterface)
 
   with context(QueueList.__init__):
     with it('creates an empty queue') as test:

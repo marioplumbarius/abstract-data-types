@@ -2,12 +2,10 @@ from node import Node
 from list_interface import ListInterface
 
 class UnorderedLinkedList(ListInterface):
-
-  """
-  A data structure that implements a collection using a sequence of linked nodes.
-  """
+  """ implementation of a list/collection using a sequence of linked nodes """
 
   def __init__(self):
+    """ create an empty list """
     self.length = 0
     self.head = None
 
@@ -39,6 +37,7 @@ class UnorderedLinkedList(ListInterface):
     print node.cargo,
 
   def addNode(self, cargo):
+    """ add a new node at the top of the list """
     if cargo == None: return
     
     node = Node(cargo)
@@ -50,4 +49,5 @@ class UnorderedLinkedList(ListInterface):
     self.length = self.length + 1
 
   def isEmpty(self):
+    """ check is the list is empty """
     return (self.length == 0)

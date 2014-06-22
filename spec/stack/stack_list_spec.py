@@ -31,6 +31,9 @@ with describe(StackList) as it:
       
       expect(last_item).to.be(item)
 
+    with it('raise IndexError when stack is empty') as test:
+      expect(test.stack.pop).to.raise_error(IndexError)
+
   with context(StackList.isEmpty):
     with it('return true if the stack is empty') as test:
       expect(test.stack.isEmpty()).to.be.true

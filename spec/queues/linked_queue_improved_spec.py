@@ -1,15 +1,15 @@
 from ivoire import describe, context
 from expects import expect
 from src.queues.linked_queue_improved import LinkedQueueImproved
-from src.queues.queue_adt import QueueADT
+from src.queues.queue_interface import QueueInterface
 
 with describe(LinkedQueueImproved) as it:
   @it.before
   def before(test):
     test.queue = LinkedQueueImproved()
 
-  with it('inherits from QueueADT') as test:
-    expect(test.queue).to.be.a(QueueADT)
+  with it('inherits from QueueInterface') as test:
+    expect(test.queue).to.be.a(QueueInterface)
 
   with context(LinkedQueueImproved.__init__):
     with it('creates an empty queue') as test:

@@ -1,5 +1,5 @@
 class StackInterface():
-  """ interface for a LIFO (last in, first out structure) """
+  """ interface for a stack adt: LIFO policy """
 
   def __init__(self):
     """ initialize a new empty stack """

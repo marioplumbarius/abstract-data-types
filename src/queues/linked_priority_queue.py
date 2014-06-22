@@ -1,15 +1,20 @@
 from src.list.node import Node
-from priority_queue_adt import PriorityQueueADT
+from priority_queue_interface import PriorityQueueInterface
 
-class PQLinkedList(PriorityQueueADT):
+class PriorityQueueLinkedList(PriorityQueueInterface):
+  """ implementation of an ordered priority queue using a linked list """
+  
   def __init__(self):
+    """ create an empty queue """
     self.length = 0
     self.head = None
 
   def isEmpty(self):
+    """ check if the queue is empty """
     return (self.length == 0)
 
   def insert(self, item):
+    """ add a new node at the the queue """
     node = Node(item)
 
     if self.isEmpty():
@@ -35,7 +40,9 @@ class PQLinkedList(PriorityQueueADT):
 
     self.length = self.length + 1
 
+  # TODO: spec me
   def printList(self):
+    """ print the whole queue """
     item = self.head
     print '[',
     while item:
@@ -47,6 +54,7 @@ class PQLinkedList(PriorityQueueADT):
     print ']',
 
   def remove(self):
+    """ remove and return the node at the top of the queue"""
     item = self.head
     self.head = self.head.next
     self.length = self.length - 1

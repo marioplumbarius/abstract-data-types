@@ -1,8 +1,8 @@
-from queue_adt import QueueADT
+from queue_interface import QueueInterface
 from src.list.node import Node
 
-class LinkedQueue(QueueADT):
-  """ implementation of a queue using a linked list data structure """
+class LinkedQueue(QueueInterface):
+  """ implementation of a queue using a linked list """
   
   def __init__(self):
     """ create an empty queue """

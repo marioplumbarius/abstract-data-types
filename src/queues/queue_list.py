@@ -1,7 +1,7 @@
-from queue_adt import QueueADT
+from queue_interface import QueueInterface
 from src.list.node import Node
 
-class QueueList(QueueADT):
+class QueueList(QueueInterface):
   """ implementation of a queue using a python list """
 
   def __init__(self):

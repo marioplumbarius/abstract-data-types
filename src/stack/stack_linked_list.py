@@ -15,6 +15,8 @@ class StackLinkedList(StackInterface):
 
   def push(self, cargo):
     """ add a new node to the stack """
+    # TODO: implement me!
+    # if not (isinstance(cargo, int) or isinstance(cargo, str)): raise ValueError
     node = Node(cargo)
 
     if not self.isEmpty():
@@ -25,6 +27,8 @@ class StackLinkedList(StackInterface):
 
   def pop(self):
     """ remove and return the last added node from the stack """
+    if self.isEmpty(): raise IndexError('the stack is empty!')
+
     toBeRemoved = self.head
     self.head = self.head.next
     self.length-=1
