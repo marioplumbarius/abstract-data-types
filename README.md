@@ -1,6 +1,8 @@
 # Abstract Data Type - ADT
 **It is a mathematical specification of a set of data and the set of operations that can be performed on the data.**
 
+- It is defined based on its behavior rather than its implementation.
+
 - It simplifies the task of specifying an algorithm if you can denote the operations you need without having to think at the same time about how the operations are performed.
 
 - Since there are usually many ways to implement an ADT, it might be useful to write an algorithm that can be used with any of the possible implementations.
