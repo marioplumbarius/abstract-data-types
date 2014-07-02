@@ -9,14 +9,16 @@
 - take examples from good resources:
     - http://interactivepython.org/courselib/static/pythonds/BasicDS/linkedlists.html
     - http://pages.cs.wisc.edu/~skrentny/cs367-common/readings/
+    - https://www.sgi.com/tech/stl/table_of_contents.html
+    - https://ece.uwaterloo.ca/~dwharder/aads/Abstract_data_types/
+    - http://cs.smu.ca/~porter/csc/common_341_342/notes/ADTMap.html
 - refactor current adts (make it more accurate)
 - test all adts
 - list resources for each adt
 - add code for the following abstract data types:
     - container
-    - deque
     - list
-    - map / associative array / dictionary
+    - map / associative array / dictionary / hash table
     - multimap
     - multiset
     - set
