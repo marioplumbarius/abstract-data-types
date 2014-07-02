@@ -1,0 +1,33 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+MACHINE = {
+  BOX: "hashicorp/precise64",
+  NETWORK_IP: "192.168.33.10",
+  HOSTNAME: "app.adt",
+  HOST_ROOT_DIR: "../",
+  GUEST_ROOT_DIR: "/opt/adt"
+}
+
+PUPPET = {
+  MANIFESTS_PATH: 'puppet/manifests',
+  MANIFEST_FILE: 'site.pp',
+  MODULE_PATH: 'puppet/modules'
+}
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  
+  config.vm.box = MACHINE[:BOX]
+  config.vm.network :private_network, ip: MACHINE[:NETWORK_IP]
+  config.vm.hostname = MACHINE[:HOSTNAME]
+  config.vm.synced_folder MACHINE[:HOST_ROOT_DIR], MACHINE[:GUEST_ROOT_DIR]
+
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = PUPPET[:MANIFESTS_PATH]
+    puppet.manifest_file = PUPPET[:MANIFEST_FILE]
+    puppet.module_path = PUPPET[:MODULE_PATH]
+  end
+end
