@@ -34,14 +34,14 @@ describe StackList do
       expect(@stack.list.length).to eq 1
     end
 
-    it 'uses the Array#pop method to acomplish the action' do
+    it 'uses the Array#pop to acomplish the action' do
       item = 3
       expect(@stack.list).to receive(:pop).and_return(item)
       @stack.pop
     end
   end
 
-  describe '#empry?' do
+  describe '#empty?' do
     it 'returns true when the stack is empty' do
       expect(@stack.empty?).to be_truthy
     end
