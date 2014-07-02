@@ -1,5 +1,5 @@
 # Abstract Data Type - ADT
-**Specifies a set of operations (INTERFACE) and its semantics, but doesn't specify the implementation of the operations.**
+**It is a mathematical specification of a set of data and the set of operations that can be performed on the data.**
 
 - It simplifies the task of specifying an algorithm if you can denote the operations you need without having to think at the same time about how the operations are performed.
 
