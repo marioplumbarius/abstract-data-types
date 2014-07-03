@@ -1,11 +1,11 @@
 class Node
   include Comparable
 
-  attr_accessor :cargo, :next
+  attr_accessor :cargo, :nextt
 
-  def initialize(cargo=nil, nextt=nil)
+  def initialize(cargo, nextt=nil)
     @cargo = cargo
-    @next = nextt
+    @nextt = nextt
   end
 
   def to_s
