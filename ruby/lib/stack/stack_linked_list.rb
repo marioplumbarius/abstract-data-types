@@ -1,9 +1,7 @@
-require 'node'
-
 class StackLinkedList
 
   attr_accessor :head, :length
-  
+
   def initialize
     @head = nil
     @length = 0
@@ -16,16 +14,16 @@ class StackLinkedList
   def push(cargo)
     node = Node.new(cargo)
 
-    node.next = @head unless empty?
+    node.nextt = @head unless empty?
 
     @head = node
     @length+=1
   end
 
   def pop
-    raise IndexError, 'the stack is empty!' if empty?
+    raise RangeError, 'the stack is empty!' if empty?
     removed_node = @head
-    @head = @head.next
+    @head = @head.nextt
     @length-=1
     removed_node
   end
