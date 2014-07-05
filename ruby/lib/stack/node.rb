@@ -4,6 +4,8 @@ class Node
   attr_accessor :cargo, :nextt
 
   def initialize(cargo, nextt=nil)
+    raise ArgumentError, 'cargo must be an integer' unless cargo.is_a?Integer
+
     @cargo = cargo
     @nextt = nextt
   end
