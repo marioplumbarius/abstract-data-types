@@ -2,6 +2,10 @@ require 'spec_helper'
 require 'stack/node'
 
 describe Node do
+  it 'includes Comparable module' do
+    expect(described_class).to include(Comparable)
+  end
+
 
   describe '#new' do
     subject { Node.new cargo, nextt }
@@ -17,16 +21,21 @@ describe Node do
       expect(subject.nextt).to be_a Node
     end
 
-    it 'includes Comparable module' do
-      expect(described_class).to include(Comparable)
+    context 'on attempt to assign a cargo of type other than an integer' do
+      it 'raises ArgumentError' do
+        expect{
+          Node.new(nil)
+        }.to raise_error(ArgumentError)
+      end
     end
+
   end
 
   describe '#to_s' do
     subject { Node.new cargo }
     let(:cargo) { 22 }
-    
-    it 'puts its @cargo value' do
+
+    it 'prints its @cargo value' do
       expect(subject.to_s).to match(/cargo: #{cargo}/)
     end
   end
