@@ -9,7 +9,7 @@ describe StackList do
   let(:item) { 22 }
 
   describe '#push' do
-    it 'add a item to the top of the stack' do
+    it 'add an item to the top of the stack' do
       subject.push(item)
       expect(subject).not_to be_empty
     end

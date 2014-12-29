@@ -13,7 +13,7 @@ describe StackLinkedList do
   end
 
   describe '#push' do
-    it 'add a new node at the top of the stack' do
+    it 'adds a new node at the top of the stack' do
       stack.push(11)
       stack.push(22)
       stack.push(33)
