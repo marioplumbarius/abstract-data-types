@@ -22,13 +22,13 @@
 
 
 """ building a tree from bottom up """
-from tree import Tree, total
+from tree import Tree
 import cProfile
 
 left = Tree(2)
 right = Tree(3)
 tree = Tree(1, left, right)
-# cProfile.run('total(tree)')
+# cProfile.run('Tree.total(tree)')
 
 """ expression trees """
 # representing the computation unambiguously of 1 + 2 * 3 (=> infix notation)
@@ -37,7 +37,7 @@ exp_tree = Tree('+', Tree(1), Tree('*', Tree(2), Tree(3)))
 """ tree traversal """
 from printing_trees import printTreePreorder, printTreePostorder, printTreeInorder, printTreeIndented
 printTreePreorder(tree)
-print total(tree)
+print Tree.total(tree)
 # prefix notation
 printTreePreorder(exp_tree)
 print

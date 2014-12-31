@@ -1,6 +1,6 @@
 class Tree():
   """ implementation of a tree """
-  
+
   def __init__(self, cargo, left=None, right=None):
     """ create a tree """
     # can be any type
@@ -28,18 +28,19 @@ class Tree():
   def setLeft(self, left):
     """ set the left node of the tree """
     self.left = left
-  
+
   def setRight(self, right):
     """ set the right node of the tree """
     self.right = right
 
   def setCargo(self, cargo):
     """ set the cargo of the tree """
-    self.cargo = cargo  
+    self.cargo = cargo
 
-def total(tree):
-  """ recursively sums the total cargos of a tree """
-  if tree == None: return 0
-  return  tree.cargo + \
-          total(tree.left) + \
-          total(tree.right)
+  @classmethod
+  def total(self, tree):
+    """ recursively sums the total cargos of a tree """
+    if tree == None: return 0
+    return  tree.cargo + \
+            Tree.total(tree.left) + \
+            Tree.total(tree.right)
