@@ -1,7 +1,6 @@
 $so_packages = ['tmux', 'curl', 'vim', 'ruby', 'rubygems']
 $gems = ['gem install rspec-expectations', 'gem install rspec']
 $apt_update = 'apt-get update'
-$gem_install = 'gem install'
 $PATH = '/usr/bin:/usr/sbin'
 
 # update apt-get packages
