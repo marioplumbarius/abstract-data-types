@@ -1,11 +1,10 @@
 require 'spec_helper'
-require 'stack/node'
+require 'list/node'
 
 describe Node do
   it 'includes Comparable module' do
     expect(described_class).to include(Comparable)
   end
-
 
   describe '#new' do
     subject { Node.new cargo, nextt }

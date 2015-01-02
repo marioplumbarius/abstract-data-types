@@ -1,12 +1,16 @@
 require 'spec_helper'
-require 'stack/node'
+require 'list/node'
 require 'stack/stack_linked_list'
 
 describe StackLinkedList do
   subject(:stack) { StackLinkedList.new }
 
-  describe '#new' do
-    it 'creates an empty stack' do
+  it 'inherits from StackInterface' do
+    expect(stack).to be_a StackInterface
+  end
+
+  describe '#initialize' do
+    it 'creates an empty linked list stack' do
       expect(stack.head).to be_nil
       expect(stack.length).to be_zero
     end

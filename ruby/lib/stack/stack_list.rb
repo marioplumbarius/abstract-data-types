@@ -1,9 +1,12 @@
-class StackList
+require_relative "./stack_interface"
+
+class StackList < StackInterface
   attr :list
+
   def initialize
     @list = []
   end
-  
+
   def push(item)
     @list.push(item) if item
   end

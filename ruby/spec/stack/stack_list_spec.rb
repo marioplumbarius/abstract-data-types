@@ -1,27 +1,38 @@
 require 'spec_helper'
 require 'stack/stack_list'
+require 'stack/stack_interface'
 
 describe StackList do
-  before do
-    subject { StackList.new }
+
+  subject(:stack) { StackList.new }
+  let(:item) { 22 }
+
+  it 'inherits from StackInterface' do
+    expect(stack).to be_a StackInterface
   end
 
-  let(:item) { 22 }
+  describe '#initialize' do
+
+    it 'creates an empty stack list' do
+      expect(stack.list).to eq []
+    end
+
+  end
 
   describe '#push' do
     it 'add an item to the top of the stack' do
-      subject.push(item)
-      expect(subject).not_to be_empty
+      stack.push(item)
+      expect(stack).not_to be_empty
     end
 
     it 'uses Array#push to acomplish the action' do
-      expect(subject.list).to receive(:push).with(item)
-      subject.push(item)
+      expect(stack.list).to receive(:push).with(item)
+      stack.push(item)
     end
 
     it 'does not add nil items' do
-      subject.push(nil)
-      expect(subject).to be_empty
+      stack.push(nil)
+      expect(stack).to be_empty
     end
   end
 
@@ -30,26 +41,35 @@ describe StackList do
     let(:last_item) { 3 }
 
     it 'removes and returns the last item from the stack' do
-      subject.push(first_item)
-      subject.push(last_item)
-      expect(subject.pop).to be last_item
-      expect(subject.list.length).to eq 1
+      stack.push(first_item)
+      stack.push(last_item)
+      expect(stack.pop).to be last_item
+      expect(stack.list.length).to eq 1
     end
 
     it 'uses the Array#pop to acomplish the action' do
-      expect(subject.list).to receive(:pop)
-      subject.pop
+      expect(stack.list).to receive(:pop)
+      stack.pop
     end
   end
 
   describe '#empty?' do
-    it 'returns true when the stack is empty' do
-      expect(subject.empty?).to be_truthy
+
+    context 'when the stack is empty' do
+      it 'returns true' do
+        expect(stack.empty?).to be_truthy
+      end
     end
 
-    it 'returns false when the stack is not empty' do
-      subject.push(item)
-      expect(subject.empty?).to be_falsy
+    context 'when the stack is not empty' do
+      before do
+        stack.push(item)
+      end
+
+      it 'returns false' do
+        expect(stack.empty?).to be_falsy
+      end
     end
+
   end
 end

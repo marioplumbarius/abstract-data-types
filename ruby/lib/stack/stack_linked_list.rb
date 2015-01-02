@@ -1,4 +1,7 @@
-class StackLinkedList
+require_relative '../list/node'
+require_relative './stack_interface'
+
+class StackLinkedList < StackInterface
 
   attr_accessor :head, :length
 
